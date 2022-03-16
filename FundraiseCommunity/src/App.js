@@ -15,7 +15,6 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 //Metamask private key
 const PRIVATE_KEY = process.env.REACT_APP_PRIVATE_KEY;
 //Polygon contract address
-const CONTRACT_ADDRESS_GREETER = process.env.REACT_APP_CONTRACT_ADDRESS_GREETER;
 const CONTRACT_ADDRESS_FUNDRAISER =
   process.env.REACT_APP_CONTRACT_ADDRESS_FUNDRAISER;
 const CONTRACT_ADDRESS_FUNDRAISER_FACTORY =
@@ -138,38 +137,6 @@ function App() {
         console.log("error reading smart contract");
       });
     console.log(fundDeets);
-
-    // if (typeof window.ethereum !== "undefined") {
-    //   await requestAccount();
-    //   const provider = new ethers.providers.AlchemyProvider(
-    //     "maticmum",
-    //     API_KEY
-    //   );
-    //   const signer = new ethers.Wallet(PRIVATE_KEY, provider);
-    //   const contract = new ethers.Contract(
-    //     CONTRACT_ADDRESS_FUNDRAISER_FACTORY,
-    //     FundraiserFactory.abi,
-    //     signer
-    //   );
-    //   try {
-    //     const beforeCount = await contract.vcfundraisersCount();
-    //     console.log("Funds count before update:", beforeCount);
-    //     const data = await contract.createVCFundraiser(
-    //       managerName,
-    //       website,
-    //       image,
-    //       investmentThesis,
-    //       managerAddress
-    //     );
-    //     await data.wait();
-    //     const afterCount = await contract.vcfundraisersCount();
-    //     await afterCount.wait();
-    //     console.log("Invested.. updates shown: ");
-    //     console.log("Funds count after update:", afterCount);
-    //   } catch (err) {
-    //     console.log("Error making updates");
-    //   }
-    // }
   }
 
   async function retrieveFund() {
