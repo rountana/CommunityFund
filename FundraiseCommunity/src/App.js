@@ -136,7 +136,6 @@ function App() {
       .catch((error) => {
         console.log("error reading smart contract");
       });
-    console.log(fundDeets);
   }
 
   async function retrieveFund() {
@@ -227,27 +226,21 @@ function App() {
     <div className="App wallet">
       <Tabs defaultActiveKey="1" centered size="large">
         <TabPane tab="Introduction" key="1">
-          <h1> {"Welcome to Fundrise"} </h1>
-          <h3>A community platform for co-investing with professionals</h3>
-          <label className="App-body">
-            <h3>
-              A platform that offers a new way of connecting fund managers with
-              community investors. Everyone can participate in the deal flow of
-              a trusted fund manager now. VCs, syndicates and rolling funds
-              raise capital from wide group of limited partners, accredited
-              investors and general public to invest in promising ventures. In
-              the current model fund on-ramp and off-ramp are tied to
-              traditional fund lifecycle, which can last several years. Large
-              capital requirements, accreditation requirements has created
-              barrier to entry for retail investors who would like to own
-              participate with smaller sums and durations.
+          <h1> {"Welcome to AdFund"} </h1>
+          <h3>
+            A community platform to co-invest in startups through vetted funds
+          </h3>
+          <label className="App">
+            <ul className="container-small">
+              <h3>Features</h3>
               <br></br>
-              Adfund offers everyone an investment opportunity to invest in
-              startups, through qualified leads channeled via professional fund
-              managers. Community investors can choose to co-invest on qualified
-              leads. Fund managers can pitch to a large pool of investors across
-              geographies to raise funds for their promising dealflows.
-            </h3>
+              <li> Register and launch a fund</li>
+              <li> Raise liquity via tokens </li>
+              <li>Find investment opportunities </li>
+              <li>Buy/Sell tokens </li>
+              <li>Secure NFTs - proof of ownership </li>
+              <li>Transfer ownership </li>
+            </ul>
           </label>
           <img src={Fundraiserlogo} />
         </TabPane>
@@ -390,10 +383,9 @@ function App() {
             <input
               className="card"
               id="search"
-              type="text"
-              value={fundIndex}
-              onChange={(e) => setFundIndex(e.target.value)}
+              type="number"
               placeholder="find by id, lead or name"
+              onChange={(e) => setFundIndex(e.target.value)}
             />
             <img src={searchIcon} onClick={retrieveFund} />
             <div>
@@ -402,9 +394,17 @@ function App() {
               <h4>{imageOutput}</h4>
               <h4>{investmentThesisOutput}</h4>
               <h4>{managerAddressOutput}</h4>
-              if(managerNameOutput != " ") {<Button> Invest</Button>}
             </div>
+            <br></br>
+            <Button> Invest & Mint proof of ownership</Button>
           </label>
+          {/* <div>
+            {{ managerNameOutput } != "Shaamaa" ? (
+              <Button> Invest </Button>
+            ) : (
+              <Button> "No portfolios to show"</Button>
+            )}
+          </div> */}
         </TabPane>
       </Tabs>
     </div>

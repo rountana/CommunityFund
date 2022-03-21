@@ -34,6 +34,16 @@ body {
   border-radius: 5px;
 }
 
+.container-small {
+  max-width: 500px;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 200px;
+  border: 1px solid steelblue;
+  padding: 30px;
+  border-radius: 5px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
